@@ -9,21 +9,12 @@ from collections import Callable
 from datetime import timedelta
 from typing import List
 
-from aiohttp import (
-	AsyncResolver,
-	ClientSession,
-	ClientResponse,
-	ClientTimeout,
-	DummyCookieJar,
-	TCPConnector)
-
-import socket
-
 # Relative imports
 from favrip.daos.http_dao import HTTPDao
 from favrip.file_operations import read_csv, write_csv
 from favrip.models.domain import Domain
 from favrip.utilities import bind
+
 
 def run(
 	csv: str,
@@ -73,6 +64,7 @@ def run(
 	)
 
 	return 0
+
 
 async def search(
 	domains: List[Domain],
